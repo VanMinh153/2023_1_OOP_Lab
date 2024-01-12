@@ -5,11 +5,6 @@ import java.awt.Container;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.*;
-import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -68,7 +63,7 @@ public class NumberGrid extends JFrame{
             else if (button.equals("DEL")){
                 tfDisplay.setText(tfDisplay.getText().substring(0, tfDisplay.getText().length() - 1));
             }
-            else {
+            else if (button.equals("C") ) {
                 tfDisplay.setText("");
             }
         }
@@ -78,6 +73,3 @@ public class NumberGrid extends JFrame{
         new NumberGrid();
     }
 }
-/*
-
-*/

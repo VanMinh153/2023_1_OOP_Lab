@@ -8,15 +8,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class AWTAccumulator extends Frame {
-  private TextField tfInput;
-  private TextField tfOutput;
-  private int sum = 0;  // Accumulated sum
-
-  // 
+  private final TextField tfInput;
+  private final TextField tfOutput;
+  private int sum = 0;
+  
+  
   public AWTAccumulator() {
     setLayout(new GridLayout(2, 2) );
 
-    add(new Label("Enter an Integer: ") );
+    add(new Label("Enter an integer: ") );
 
     tfInput = new TextField(10);
     add(tfInput);
@@ -34,12 +34,13 @@ public class AWTAccumulator extends Frame {
   }
 
   public static void main(String[] args) {
-    new AWTAccumulator();
+      AWTAccumulator awtAccumulator = new AWTAccumulator();
   }
 
   private class TFInputListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent evt) {
+      if ("".equals(tfInput.getText())) return;
       int numberIn = Integer.parseInt(tfInput.getText() );
       sum += numberIn;
       tfInput.setText("");
